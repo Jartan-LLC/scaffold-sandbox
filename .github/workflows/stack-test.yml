@@ -1,0 +1,10 @@
+name: stack-test
+on:
+  pull_request:
+    branches: [main]
+permissions: {}
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "action=${{ github.event.action }} base=${{ github.event.pull_request.base.ref }} head=${{ github.event.pull_request.head.sha }}"
